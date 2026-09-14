@@ -1,0 +1,95 @@
+{{!< default}}
+{{!-- The Craft — the ritual: pick, bhatti, sort, test. Ink hero, four timeline rows, Kanchenjunga close.
+     Mobile: hero 65svh; rows stack number+title → text → metrics (2-col kept) → image; .no shrinks to 3rem. --}}
+
+<main id="main" class="craft-page">
+    {{#post}}
+
+    <section class="craft-hero">
+        {{#if feature_image}}
+            <div class="craft-hero-bg" style="background-image: url({{img_url feature_image size="xl"}});" aria-hidden="true"></div>
+        {{/if}}
+        {{> "site-nav" navClass="on-dark"}}
+        <div class="craft-hero-inner">
+            <p class="eyebrow on-dark-eyebrow">The Craft · Fifty hours</p>
+            <h1>{{title}}</h1>
+            <p class="craft-lede">{{#if custom_excerpt}}{{custom_excerpt}}{{else}}The pod is picked green. It becomes black in the bhatti — a low-roofed shed where a fire is lit under a bamboo grate. The pods sit above the smoke for two nights and a day.{{/if}}</p>
+        </div>
+    </section>
+
+    <div class="craft-body">
+
+        <section class="craft-timeline">
+
+            <article class="craft-row fade-up">
+                <div class="no"><span class="n">i.</span><span class="s">Pick</span></div>
+                <div class="txt">
+                    <h3>Third-year stems <em>only.</em></h3>
+                    <p>The capsule is cut by hand at the base of the stem, green, at full oil. Younger stems are left alone; they are next year's harvest. There is no machine for this — the hill is too steep and the plant too particular.</p>
+                    <div class="metrics">
+                        <div class="m"><div class="k">Harvest window</div><div class="v">Sept–Nov</div></div>
+                        <div class="m"><div class="k">Selection</div><div class="v">3rd-year stems</div></div>
+                    </div>
+                </div>
+                <div class="imgcell">{{#if @custom.craft_step_1}}<img src="{{img_url @custom.craft_step_1 size="l"}}" alt="Hands cutting green cardamom capsules at the base of the stem" loading="lazy">{{/if}}</div>
+            </article>
+
+            <article class="craft-row fade-up">
+                <div class="no"><span class="n">ii.</span><span class="s">Bhatti</span></div>
+                <div class="txt">
+                    <h3>Two nights and a day <em>above the smoke.</em></h3>
+                    <p>The bhatti is a low shed with a bamboo grate and a wood fire beneath it. The smoke is indirect — never flame, never scorch. Someone tends that fire through the November cold; it does not sleep, and neither, some nights, do they.</p>
+                    <div class="metrics">
+                        <div class="m"><div class="k">Duration</div><div class="v">50 hours</div></div>
+                        <div class="m"><div class="k">Moisture</div><div class="v">78% → 11%</div></div>
+                    </div>
+                </div>
+                <div class="imgcell">{{#if @custom.craft_step_2}}<img src="{{img_url @custom.craft_step_2 size="l"}}" alt="Cardamom pods drying on a bamboo grate above a wood fire in the bhatti" loading="lazy">{{/if}}</div>
+            </article>
+
+            <article class="craft-row fade-up">
+                <div class="no"><span class="n">iii.</span><span class="s">Sort</span></div>
+                <div class="txt">
+                    <h3>By hand, into <em>three fates.</em></h3>
+                    <p>First cut — whole, unbroken, fully dark. Second cut — good, but not for the tin. Damaged — for the local market, honestly labelled. Every pod is turned over in someone's fingers before it is anything else.</p>
+                    <div class="metrics">
+                        <div class="m"><div class="k">Grades</div><div class="v">3</div></div>
+                        <div class="m"><div class="k">Enters the tin</div><div class="v">First cut only</div></div>
+                    </div>
+                </div>
+                <div class="imgcell">{{#if @custom.craft_step_3}}<img src="{{img_url @custom.craft_step_3 size="l"}}" alt="Dried cardamom pods being sorted by hand into grades" loading="lazy">{{/if}}</div>
+            </article>
+
+            <article class="craft-row fade-up">
+                <div class="no"><span class="n">iv.</span><span class="s">Test</span></div>
+                <div class="txt">
+                    <h3>The trace the commodity <em>never gets.</em></h3>
+                    <p>Every batch is checked: moisture and essential-oil percentage. The batch code on the tin traces back to a hearth with a name.</p>
+                    <div class="metrics">
+                        <div class="m"><div class="k">Every batch</div><div class="v">Traceable code</div></div>
+                    </div>
+                </div>
+                <div class="imgcell">{{#if @custom.craft_step_4}}<img src="{{img_url @custom.craft_step_4 size="l"}}" alt="Batch of black cardamom with its traceability code" loading="lazy">{{/if}}</div>
+            </article>
+
+        </section>
+
+        {{#if content}}
+        <section class="art-body craft-content">
+            {{content}}
+        </section>
+        {{/if}}
+
+    </div>
+
+    <section class="craft-close">
+        <p class="line">This is why every kitchen in Nepal <em>knows the smell.</em></p>
+        <a class="text-link on-dark-link" href="{{@site.url}}/the-farmers/">Meet the farmers who tend the fire →</a>
+    </section>
+
+    <section class="page-close">
+        {{> "subscribe-card"}}
+    </section>
+
+    {{/post}}
+</main>

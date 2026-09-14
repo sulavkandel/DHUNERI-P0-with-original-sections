@@ -1,0 +1,10 @@
+{{!-- Category pills bar. Dot colours per design law: farmers=copper, recipes=sindoor, research=chiya(ringed), health=kanchen.
+     Active pill marked by body class (tag-<slug>) via CSS. Mobile ≤700px: horizontal scroll with edge fade. --}}
+<nav class="jrn-cats" aria-label="Journal categories">
+    <a class="jrn-cat jrn-cat-all" href="{{@site.url}}/journal/"><span class="swatch" aria-hidden="true"></span>All</a>
+    <a class="jrn-cat farmers" href="{{@site.url}}/tag/farmers/"><span class="swatch" aria-hidden="true"></span>Farmers</a>
+    <a class="jrn-cat recipes" href="{{@site.url}}/tag/recipes/"><span class="swatch" aria-hidden="true"></span>Recipes</a>
+    <a class="jrn-cat research" href="{{@site.url}}/tag/research/"><span class="swatch" aria-hidden="true"></span>Research</a>
+    <a class="jrn-cat health" href="{{@site.url}}/tag/health/"><span class="swatch" aria-hidden="true"></span>Health &amp; Ayurveda</a>
+    <span class="jrn-sort" aria-hidden="true">Newest ↓</span>
+</nav>

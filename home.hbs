@@ -1,0 +1,207 @@
+{{!< default}}
+
+{{#contentFor "body_class"}}homepage-p0{{/contentFor}}
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="homepage-p0">
+<header class="site-header" aria-label="DHUNERI site header">
+    <a class="brand" href="{{@site.url}}/" aria-label="DHUNERI home">
+        <span class="brand-script" aria-hidden="true">{{> "logo-limbu"}}</span>
+        <span class="brand-word">{{@site.title}}</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+
+    <nav id="nav-links" class="site-nav" aria-label="Primary navigation">
+        <a href="{{@site.url}}/the-land/">The Land</a>
+        <a href="{{@site.url}}/the-farmers/">The Farmers</a>
+        <a href="{{@site.url}}/the-craft/">The Craft</a>
+        <a href="{{@site.url}}/journal/">Journal</a>
+        <a class="nav-pill" href="{{@site.url}}/subscribe/">Subscribe</a>
+    </nav>
+</header>
+
+<main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-video-wrap" aria-hidden="true">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="{{asset "images/generated/cardamom_shade_leaves.jpg"}}">
+                <source src="{{asset "video/generated/dhuneri_hero_loop.mp4"}}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>Black cardamom</span><span class="status-slash" aria-hidden="true">/</span>
+                <span>Taplejung, Nepal</span><span class="status-slash" aria-hidden="true">/</span>
+                <span>Research phase</span>
+            </div>
+            <p class="section-number">01 — Start here</p>
+            <h1 id="hero-title">Follow one pod<br><em>from mountain</em><br>to smoke.</h1>
+            <p class="hero-definition">Black cardamom is a smoke-dried pod from the wet forests of eastern Nepal. DHUNERI is documenting its route from crop to hearth.</p>
+            <div class="hero-actions">
+                <a class="button button-dark" href="{{@site.url}}/tag/research/">Start with the research <span aria-hidden="true">→</span></a>
+                <a class="button button-quiet" href="#routes">Trace the route <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-controls">
+                <button class="video-control" type="button" data-video-toggle data-video-state="playing" aria-label="Pause background motion">
+                    <span class="video-control-icon" aria-hidden="true"><i></i><i></i></span>
+                    <span class="video-control-label">Pause motion</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-scroll" aria-hidden="true"><span class="scroll-line"></span><span>Scroll to enter</span></div>
+    </section>
+
+    <section id="routes" class="routes section-light" aria-labelledby="routes-title">
+        <div class="section-intro">
+            <p class="section-number">02 — Choose a way in</p>
+            <h2 id="routes-title">Start with the question<br><em>you came carrying.</em></h2>
+            <p>There is no single right way into the field. Choose a thread, then follow it until it meets another.</p>
+        </div>
+        <div class="route-list">
+            <a class="route-row route-row-crop" href="#crop">
+                <span class="route-index">01</span>
+                <span class="route-icon route-icon-pod" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="route-copy"><strong>Learn the crop</strong><small>What makes black cardamom black?</small></span>
+                <span class="route-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="route-row route-row-research" href="{{@site.url}}/tag/research/">
+                <span class="route-index">02</span>
+                <span class="route-icon route-icon-line" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="route-copy"><strong>Follow the research</strong><small>Read the records behind the crop.</small></span>
+                <span class="route-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="route-row route-row-craft" href="{{@site.url}}/the-craft/">
+                <span class="route-index">03</span>
+                <span class="route-icon route-icon-fire" aria-hidden="true"><i></i><i></i></span>
+                <span class="route-copy"><strong>Meet the craft</strong><small>See what smoke changes.</small></span>
+                <span class="route-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="crop" class="crop-definition section-light" aria-labelledby="crop-title">
+        <div class="crop-definition-inner">
+            <div>
+                <p class="section-number">02b — The crop</p>
+                <h2 id="crop-title">A pod that holds<br><em>the smoke.</em></h2>
+            </div>
+            <div class="crop-definition-copy">
+                <p>Black cardamom is a large pod grown in the wet forests of eastern Nepal and dried above indirect wood smoke. It is not green cardamom in a darker coat; it is a crop with its own scent, place, and route.</p>
+                <p class="crop-definition-note"><span>Research boundary</span>The definition is a starting point. DHUNERI is still documenting the varieties, practices, and people behind the work.</p>
+                <a class="text-link" href="{{@site.url}}/the-land/">Continue into the place <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="evidence" class="evidence-band" aria-labelledby="evidence-title">
+        <div class="evidence-head">
+            <p class="section-number">03 — The record</p>
+            <h2 id="evidence-title">The beautiful part<br>is what we can <em>prove.</em></h2>
+            <p>DHUNERI keeps the atmosphere, but labels the boundary between what is known and what is still open.</p>
+        </div>
+        <div class="evidence-grid">
+            <button class="evidence-card is-active" type="button" data-evidence="place" aria-expanded="true" aria-controls="evidence-detail-place">
+                <span class="evidence-label"><i aria-hidden="true"></i> Documented</span>
+                <strong>Taplejung</strong>
+                <span class="evidence-sub">Eastern Nepal · first address</span>
+                <span id="evidence-detail-place" class="evidence-detail">The crop’s origin is the first line in the record. Exact partner locations remain private until consent is clear.</span>
+                <span class="evidence-plus" aria-hidden="true">+</span>
+            </button>
+            <button class="evidence-card" type="button" data-evidence="process" aria-expanded="false" aria-controls="evidence-detail-process">
+                <span class="evidence-label"><i aria-hidden="true"></i> Observed</span>
+                <strong>Bhatti smoke</strong>
+                <span class="evidence-sub">Indirect heat · slow change</span>
+                <span id="evidence-detail-process" class="evidence-detail" hidden>Smoke is treated as a method to understand, not a mood to decorate. The full process record is still being assembled.</span>
+                <span class="evidence-plus" aria-hidden="true">+</span>
+            </button>
+            <button class="evidence-card" type="button" data-evidence="future" aria-expanded="false" aria-controls="evidence-detail-future">
+                <span class="evidence-label"><i aria-hidden="true"></i> Open question</span>
+                <strong>Future tin</strong>
+                <span class="evidence-sub">No checkout · not ready yet</span>
+                <span id="evidence-detail-future" class="evidence-detail" hidden>A future release will only appear after the crop, partners, price, and fulfillment path are verified.</span>
+                <span class="evidence-plus" aria-hidden="true">+</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="craft" class="craft-bridge" aria-labelledby="craft-title">
+        <div class="craft-image">
+            {{#if @custom.home_craft_image}}
+                <img src="{{@custom.home_craft_image}}" alt="Conceptual image accompanying DHUNERI craft notes">
+            {{else}}
+                <img src="{{asset "images/abstract_texture.jpg"}}" alt="Abstract shadow and texture study accompanying DHUNERI craft notes">
+            {{/if}}
+            <span class="image-tag">Concept study · not documentary</span>
+        </div>
+        <div class="craft-copy">
+            <p class="section-number">04 — The material question</p>
+            <h2 id="craft-title">The smoke is not<br>a flavour note.<br><em>It is the method.</em></h2>
+            <p>Harvest, drying, bhatti, sorting, storage. The craft page will follow each change without turning a living process into a product shortcut.</p>
+            <a class="text-link" href="{{@site.url}}/the-craft/">Enter the craft notes <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
+
+    <section id="research" class="research section-light" aria-labelledby="research-title">
+        <div class="research-topline"><p class="section-number">05 — Open record</p><span class="research-count">Published research</span></div>
+        <div class="research-heading">
+            <h2 id="research-title">Keep following<br><em>the evidence.</em></h2>
+            <p>Start with the records already published. New field notes will join them as the work is verified.</p>
+        </div>
+        <div class="research-list">
+            {{#get "posts" filter="tag:research" limit="2" order="published_at desc"}}
+                {{#foreach posts}}
+                    <a class="research-item" href="{{url}}">
+                        <span class="research-meta"><b>Research</b><span>{{date published_at format="MMM D, YYYY"}}</span></span>
+                        <span class="research-title">{{title}}</span>
+                        <span class="research-dek">{{excerpt words="24"}}</span>
+                        <span class="research-read">Read <i aria-hidden="true">→</i></span>
+                    </a>
+                {{else}}
+                    <p class="research-empty">The research desk is being assembled. Check the Journal for the next published record.</p>
+                {{/foreach}}
+            {{/get}}
+        </div>
+        <a class="research-desk-link" href="{{@site.url}}/tag/research/">Open the research desk <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section id="dispatch" class="dispatch" aria-labelledby="dispatch-title">
+        <div class="dispatch-glyph" aria-hidden="true">ᤍᤢᤴᤢᤖᤡ</div>
+        <div class="dispatch-copy">
+            <p class="section-number">06 — Return when ready</p>
+            <h2 id="dispatch-title">Stay near<br><em>the hearth.</em></h2>
+            <p>One Field Dispatch a month: new research, field notes, and the next verified finding.</p>
+        </div>
+        <form class="dispatch-form" data-members-form="subscribe">
+            <label for="dispatch-email">Your email</label>
+            <div class="dispatch-input-row"><input id="dispatch-email" data-members-email name="email" type="email" placeholder="you@example.com" autocomplete="email" required><button type="submit">Join the record <span aria-hidden="true">→</span></button></div>
+            <p class="form-note">A real Ghost Members signup. We will only use this for DHUNERI dispatches.</p>
+            <p class="form-note is-success members-success" aria-live="polite">You’re on the record. Check your inbox to confirm.</p>
+            <p class="form-note members-error" data-members-error aria-live="polite"></p>
+        </form>
+    </section>
+</main>
+
+<div class="cfr-home-layer" aria-label="Interactive first-visit cardamom field reveal">
+    <div class="cfr-module" data-cfr-root data-cfr-state="initial" data-cfr-ground="{{asset "images/generated/cardamom-field-ground.jpg"}}" data-cfr-cover="{{asset "images/generated/cardamom-field-cover.jpg"}}">
+        <div class="cfr-base" aria-hidden="true"></div>
+        <canvas class="cfr-veil" aria-hidden="true"></canvas>
+        <div class="cfr-vignette" aria-hidden="true"></div>
+        <div class="cfr-pointer" aria-hidden="true">
+            <svg viewBox="0 0 24 32" role="presentation"><path d="M4.6 2.8c0-1.2 1.7-1.7 2.4-.6l3.3 5.1V3.1c0-1.3 1.9-1.5 2.1-.2l.7 4.5V3.9c0-1.2 1.8-1.3 2-.1l.7 5.1V5.8c0-1.2 1.8-1.2 2-.1l.9 7.2c.3 2.5-.2 4.7-1.6 6.3l-3 3.5c-.6.7-1.7.7-2.3 0l-6.8-8.3c-.8-1-.6-2.5.4-3.3l.9-.7-2.8-4.7c-.4-.7-.8-1.8-.9-2.9Z"/></svg>
+        </div>
+        <button class="cfr-skip" type="button" data-cfr-skip>Skip field reveal</button>
+        <div class="cfr-state-readout" aria-live="polite"><span data-cfr-frame-label>01 · Initial</span><span class="cfr-progress" aria-hidden="true"><i data-cfr-progress></i></span></div>
+        <div class="cfr-onboarding"><span class="cfr-onboarding-icon" aria-hidden="true">✦</span><span data-cfr-instruction>Move through the field</span></div>
+        <div class="cfr-debug" aria-hidden="true"><span data-cfr-debug-frame>Frame 1</span><strong>Green direct</strong></div>
+    </div>
+</div>
+</div>

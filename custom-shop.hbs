@@ -1,0 +1,81 @@
+{{!< default}}
+{{!-- Shop, Phase 2 — built now, activated later. Pure-CSS tin mockup; buy button is a members waitlist.
+     Phase 2 flip = content edit in Admin (see deployment guide), no redeploy.
+     Mobile: bridge quote 1.4rem; hero stacks tin-first; attributes 2-col ≥360px; button full-width ≥48px. --}}
+
+<main id="main" class="shop-page">
+    {{#post}}
+    {{> "site-nav"}}
+
+    <section class="shop-bridge">
+        <p class="quote fade-up">You have met the land, the hands, and the fire. <em>This</em> is the only page that asks for anything.</p>
+        <div class="divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="shop-hero">
+
+        <div class="tin-wrap fade-up">
+            <div class="tin-mockup" role="img" aria-label="The Dhuneri tin: single origin Taplejung black cardamom, smoked whole, batch DHU-2026-TB-11, 50 grams">
+                <div class="label">
+                    <div class="top">SINGLE ORIGIN · TAPLEJUNG</div>
+                    <div class="mid">
+                        <div class="brand">Dhuneri</div>
+                        <div class="sub">black cardamom, smoked whole</div>
+                        <div class="glyph" aria-hidden="true">{{> "logo-limbu"}}</div><span class="sr-only">Dhuneri</span>
+                    </div>
+                    <div class="bot">
+                        <span class="batch">BATCH DHU-2026-TB-11</span>
+                        <span class="weight">50 g</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-pdp fade-up">
+            <span class="phase-pill">Phase 2 · Not yet on sale</span>
+            <h1>{{title}}</h1>
+            <p class="origin-line">Grown by Til Bahadur Limbu · Taplejung · Harvest 2026</p>
+            <p class="desc">Whole pods, smoked fifty hours over an alder-wood fire, sorted to first cut only, and sealed in the tin. Nothing ground, nothing blended, nothing anonymous.</p>
+            <div class="price-row">
+                {{!-- Use Nepali Rupee mark (रू) as this is a Nepali product, never ₹ (Indian) --}}
+                <span class="price">रू —</span>
+                <span class="unit">50 g · whole pods</span>
+            </div>
+            <form class="waitlist form" data-members-form="subscribe">
+                <input data-members-email type="email" name="email" required placeholder="your email" autocomplete="email" aria-label="Your email">
+                <button type="submit" class="buy">Write to me when the tin is ready →</button>
+                <p class="members-success" aria-live="polite">You'll be the first to know. Check your inbox to confirm.</p>
+                <p class="members-error" data-members-error aria-live="polite"></p>
+            </form>
+            <div class="attributes">
+                <div class="a"><div class="k">Origin</div><div class="v">Taplejung, Nepal</div></div>
+                <div class="a"><div class="k">Harvest</div><div class="v">Nov 2026</div></div>
+                <div class="a"><div class="k">Grade</div><div class="v">First cut, whole</div></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="shop-story-embed fade-up">
+        <p class="eyebrow">Before you decide</p>
+        <h3>Meet the man on the <em>label.</em></h3>
+        <p>The batch code on this tin is not decoration. It traces to fifteen ropani in Taplejung and a bhatti fire that Til Bahadur Limbu has tended for thirty-one years. Read the story before you buy the spice.</p>
+        <div class="links">
+            <a class="text-link" href="{{@site.url}}/the-farmers/">Til Bahadur's hearth →</a>
+            <a class="text-link" href="{{@site.url}}/the-craft/">How it's smoked →</a>
+        </div>
+    </section>
+
+    {{#if content}}
+    <section class="art-body shop-content">
+        {{content}}
+    </section>
+    {{/if}}
+
+    <section class="page-close">
+        {{> "subscribe-card"}}
+    </section>
+
+
+    {{/post}}
+</main>

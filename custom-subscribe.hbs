@@ -1,0 +1,72 @@
+{{!< default}}
+{{!-- Subscribe — the #1 asset. Ghost native member signup only; works with Portal on or off.
+     Mobile: hero 92svh, pill form kept (input shrinks); cards 1-col; covenant table stacks with data-label ≤700px. --}}
+
+<main id="main" class="subscribe-page">
+    {{#post}}
+
+    <section class="sub-hero">
+        {{#if feature_image}}
+            <div class="sub-hero-bg" style="background-image: url({{img_url feature_image size="xl"}});" aria-hidden="true"></div>
+        {{/if}}
+        {{> "site-nav" navClass="on-dark"}}
+        <div class="sub-hero-inner">
+            <div class="glyph" aria-hidden="true">{{> "logo-limbu"}}</div><span class="sr-only">Dhuneri</span>
+            <h1>{{title}}</h1>
+            <p class="promise">{{#if custom_excerpt}}{{custom_excerpt}}{{else}}Field photographs. A recipe. Sometimes a farmer's voice note. No launches, no promo codes, nothing to unsubscribe-regret.{{/if}}</p>
+            <form class="pill-form form" data-members-form="subscribe">
+                <input data-members-email type="email" name="email" required placeholder="your email" autocomplete="email" aria-label="Your email">
+                <button type="submit">Sit by the fire →</button>
+                <p class="members-success" aria-live="polite">You're by the fire. Check your inbox to confirm.</p>
+                <p class="members-error" data-members-error aria-live="polite"></p>
+            </form>
+            <p class="fine">Unsubscribe in one click · No third parties · Ever</p>
+        </div>
+    </section>
+
+    <section class="sub-what">
+        <h2>What a letter <em>looks</em> like.</h2>
+        <div class="cards">
+            <div class="l fade-up">
+                <div class="n">№ 1</div>
+                <h3>The photograph</h3>
+                <p>One field image from that month — the mist, the grate, the hands. Captioned, dated, never filtered.</p>
+            </div>
+            <div class="l fade-up">
+                <div class="n">№ 2</div>
+                <h3>The recipe</h3>
+                <p>One dish, one pod. Written plainly, tested twice in a Kathmandu kitchen before it reaches yours.</p>
+            </div>
+            <div class="l fade-up">
+                <div class="n">№ 3</div>
+                <h3>The voice</h3>
+                <p>Some months, a farmer's forty-second voice note — transcribed, translated, and left exactly as spoken.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="placement-map">
+        <h2>Where we ask — and <em>where we never will.</em></h2>
+        <table>
+            <thead>
+                <tr><th scope="col">Placement</th><th scope="col">Where</th><th scope="col">Tone</th></tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Placement">Footer whisper</td><td data-label="Where">Every page</td><td data-label="Tone">One line, no image</td></tr>
+                <tr><td data-label="Placement">Homepage Beat VI</td><td data-label="Where">After the story</td><td data-label="Tone">Invitation card</td></tr>
+                <tr><td data-label="Placement">Article end</td><td data-label="Where">After the last paragraph</td><td data-label="Tone">The hearth card</td></tr>
+                <tr><td data-label="Placement">Subscribe page</td><td data-label="Where">Here</td><td data-label="Tone">The full room</td></tr>
+                <tr><td data-label="Placement">Shop waitlist</td><td data-label="Where">Phase 2</td><td data-label="Tone">Same form, different door</td></tr>
+                <tr><td data-label="Placement">Pop-ups · overlays · exit-intent</td><td data-label="Where">Nowhere</td><td data-label="Tone" class="never">Never</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    {{#if content}}
+    <section class="art-body sub-content">
+        {{content}}
+    </section>
+    {{/if}}
+
+    {{/post}}
+</main>

@@ -1,0 +1,50 @@
+{{!< default}}
+{{!-- Journal river at /journal/ (routes.yaml collection, filter tag:-hash-farmer).
+     Featured block only on page 1. Mobile: grid 1-col, cats bar horizontal-scroll. --}}
+
+{{> "site-nav"}}
+
+<main id="main" class="journal-index">
+
+    <section class="jrn-hero">
+        <p class="eyebrow">The Journal · Since 2026</p>
+        <h1>Notes from a <em>hearth</em><br>we tend by hand.</h1>
+        <p class="jrn-lede">Field dispatches from Taplejung. Recipes tested in a kitchen in Kathmandu. Research we cannot find anywhere else, published open. One post a week, at most.</p>
+    </section>
+
+    {{> "journal-cats"}}
+
+    {{#unless pagination.prev}}
+        {{#foreach posts limit="1"}}
+            <article class="jrn-featured {{post_class}}">
+                <a class="cover-img" href="{{url}}">
+                    {{#if feature_image}}
+                        <img src="{{img_url feature_image size="l"}}" alt="{{title}}" fetchpriority="high">
+                    {{/if}}
+                </a>
+                <div>
+                    <p class="cat">{{#if primary_tag}}{{primary_tag.name}}{{else}}Journal{{/if}} · Featured</p>
+                    <h2><a href="{{url}}">{{title}}</a></h2>
+                    <p class="excerpt">{{excerpt words="40"}}</p>
+                    <p class="byline">By {{primary_author.name}} · {{date format="DD MMM YYYY"}} · {{reading_time}}</p>
+                    <p class="jrn-featured-more"><a class="text-link" href="{{url}}">Read the letter →</a></p>
+                </div>
+            </article>
+        {{/foreach}}
+
+        <div class="jrn-grid">
+            {{#foreach posts from="2"}}
+                {{> "journal-card"}}
+            {{/foreach}}
+        </div>
+    {{else}}
+        <div class="jrn-grid">
+            {{#foreach posts}}
+                {{> "journal-card"}}
+            {{/foreach}}
+        </div>
+    {{/unless}}
+
+    {{pagination}}
+
+</main>

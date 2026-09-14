@@ -1,0 +1,18 @@
+{{!< default}}
+{{!-- Error page. Article typography. --}}
+
+{{> "site-nav"}}
+
+<main id="main" class="generic-page">
+    <article class="post">
+        <header class="art-hero">
+            <h1>{{statusCode}}</h1>
+            <p class="lede">{{message}}</p>
+        </header>
+
+        <section class="art-body">
+            <p><a href="{{@site.url}}/">Return home →</a></p>
+        </section>
+
+    </article>
+</main>

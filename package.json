@@ -1,0 +1,74 @@
+{
+  "name": "dhuneri",
+  "description": "Ghost theme for DHUNERI — a research-phase black-cardamom project from Taplejung, Nepal. Two hearths touch.",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Dhuneri",
+    "email": "hello@dhuneri.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 10,
+    "image_sizes": {
+      "xs": {
+        "width": 150
+      },
+      "s": {
+        "width": 400
+      },
+      "m": {
+        "width": 750
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
+    "card_assets": true,
+    "custom": {
+      "home_craft_image": {
+        "type": "image",
+        "group": "homepage",
+        "description": "Beat V background — the bhatti, lit by fire only (25% opacity)"
+      },
+      "land_gallery_1": {
+        "type": "image",
+        "description": "The Land gallery — wide cell (4:3), cardamom under the alders"
+      },
+      "land_gallery_2": {
+        "type": "image",
+        "description": "The Land gallery — side cell, the plant up close"
+      },
+      "land_gallery_3": {
+        "type": "image",
+        "description": "The Land gallery — side cell, the hillside terraces"
+      },
+      "craft_step_1": {
+        "type": "image",
+        "description": "The Craft — step i. Pick (4:5, hands cutting green pods)"
+      },
+      "craft_step_2": {
+        "type": "image",
+        "description": "The Craft — step ii. Bhatti (4:5, pods above the smoke, fire-lit)"
+      },
+      "craft_step_3": {
+        "type": "image",
+        "description": "The Craft — step iii. Sort (4:5, hands grading pods)"
+      },
+      "craft_step_4": {
+        "type": "image",
+        "description": "The Craft — step iv. Test (4:5, the batch)"
+      }
+    }
+  }
+}

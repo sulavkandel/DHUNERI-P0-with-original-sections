@@ -1,0 +1,26 @@
+{{!< default}}
+{{!-- Category shelf /tag/:slug/. body_class carries tag-<slug> → CSS colours hero dot + marks active pill. Mobile: grid 1-col. --}}
+
+{{> "site-nav"}}
+
+<main id="main" class="journal-tag">
+
+    {{#tag}}
+    <section class="jrn-hero tag-hero">
+        <p class="eyebrow"><span class="tag-dot" aria-hidden="true"></span>The Journal · {{name}}</p>
+        <h1>{{name}}<em>.</em></h1>
+        <p class="jrn-lede">{{#if description}}{{description}}{{else}}Every letter on this shelf of the library.{{/if}}</p>
+    </section>
+    {{/tag}}
+
+    {{> "journal-cats"}}
+
+    <div class="jrn-grid">
+        {{#foreach posts}}
+            {{> "journal-card"}}
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+
+</main>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="{{asset "css/fonts.css"}}">
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}?v=2">
+    {{#is "home"}}
+        <link rel="stylesheet" href="{{asset "css/cardamom-field-reveal.css"}}">
+        <link rel="stylesheet" href="{{asset "css/home-p0.css"}}">
+    {{/is}}
+    <script>document.documentElement.classList.add('js-enabled');</script>
+    <noscript><style>.fade-up { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <script defer data-domain="dhuneri.com" src="https://plausible.io/js/script.js"></script>
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{!-- Each template renders site-nav itself (navClass varies: on-dark heroes absorb the nav). --}}
+    {{{body}}}
+
+    {{> "site-footer"}}
+
+    {{#is "home"}}
+        <script defer src="{{asset "js/cardamom-field-reveal.js"}}"></script>
+    {{/is}}
+    <script defer src="{{asset "js/main.js"}}"></script>
+    {{ghost_foot}}
+</body>
+</html>

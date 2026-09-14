@@ -1,0 +1,55 @@
+{{!-- Global footer. Ropani Ink. Grid 2fr/1fr/1fr/1fr → 2col ≤800px → 1col ≤480px. Column 1 carries the whisper members form. --}}
+<footer class="dh-footer">
+    <div class="dh-footer-inner">
+        <section class="footer-brand">
+            <div class="glyph" aria-hidden="true">{{> "logo-limbu"}}</div><span class="sr-only">Dhuneri</span>
+            <div class="footer-wordmark">{{@site.title}}</div>
+            <p class="fine">A research-phase black-cardamom project from Taplejung, Nepal.<br><br>Made in Kathmandu · Grown in Taplejung</p>
+
+            <form class="footer-whisper" data-members-form="subscribe">
+                <label class="footer-whisper-label" for="footer-email">One letter a month, from the hearth</label>
+                <div class="whisper-row">
+                    <input id="footer-email" data-members-email type="email" name="email" required placeholder="your email" autocomplete="email">
+                    <button type="submit">Sit by the fire →</button>
+                </div>
+                <p class="members-success" aria-live="polite">You're by the fire. Check your inbox to confirm.</p>
+                <p class="members-error" data-members-error aria-live="polite"></p>
+            </form>
+        </section>
+
+        <nav class="footer-col" aria-label="Story">
+            <h5>Story</h5>
+            <ul>
+                <li><a href="{{@site.url}}/the-land/">The Land</a></li>
+                <li><a href="{{@site.url}}/the-farmers/">The Farmers</a></li>
+                <li><a href="{{@site.url}}/the-craft/">The Craft</a></li>
+                <li><a href="{{@site.url}}/about/">About</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Read">
+            <h5>Read</h5>
+            <ul>
+                <li><a href="{{@site.url}}/journal/">Journal</a></li>
+                <li><a href="{{@site.url}}/tag/recipes/">Recipes</a></li>
+                <li><a href="{{@site.url}}/tag/research/">Research</a></li>
+                <li><a href="{{@site.url}}/subscribe/">Subscribe</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Elsewhere">
+            <h5>Elsewhere</h5>
+            <ul>
+                {{#if @site.facebook}}<li><a href="{{social_url type="facebook"}}" rel="noopener">Facebook</a></li>{{/if}}
+                {{#if @site.twitter}}<li><a href="{{social_url type="twitter"}}" rel="noopener">Twitter</a></li>{{/if}}
+                <li><a href="https://instagram.com/dhuneri" rel="noopener">Instagram</a></li>
+                <li><a href="mailto:hello@dhuneri.com">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="dh-footer-base">
+        <span>© {{date format="YYYY"}} {{@site.title}} · Two hearths touch.</span>
+        <span class="footer-ghost">Published with <a href="https://ghost.org" rel="noopener">Ghost</a></span>
+    </div>
+</footer>

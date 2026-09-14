@@ -1,0 +1,22 @@
+routes:
+  /: home
+  /shop/: custom-shop
+  /subscribe/: custom-subscribe
+  /the-craft/: custom-the-craft
+  /the-farmers/: custom-the-farmers
+  /the-land/: custom-the-land
+
+collections:
+  /journal/:
+    permalink: /journal/{slug}/
+    template: index
+    filter: tag:-hash-farmer
+
+  /farmers/:
+    permalink: /farmers/{slug}/
+    template: index
+    filter: tag:hash-farmer
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

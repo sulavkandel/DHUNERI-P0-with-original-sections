@@ -1,0 +1,61 @@
+{{!< default}}
+{{!-- The letter (article). Centered hero, 21:9 cover, 65ch body with drop cap, ends at the hearth. Mobile: body 1.15rem, prev/next stacks. --}}
+
+{{> "site-nav"}}
+
+<main id="main" class="post-page">
+    {{#post}}
+    <article class="{{post_class}}">
+
+        <header class="art-hero">
+            {{#if primary_tag}}<p class="cat"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p class="lede">{{custom_excerpt}}</p>{{/if}}
+            <p class="byline">By {{primary_author.name}} · <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time> · {{reading_time}}</p>
+        </header>
+
+        {{#if feature_image}}
+            <figure class="art-cover">
+                <img src="{{img_url feature_image size="l"}}"
+                     srcset="{{img_url feature_image size="m"}} 750w, {{img_url feature_image size="l"}} 1200w, {{img_url feature_image size="xl"}} 2000w"
+                     sizes="(max-width: 1200px) 100vw, 1200px"
+                     alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                     fetchpriority="high">
+                {{#if feature_image_caption}}<figcaption>{{feature_image_caption}}</figcaption>{{/if}}
+            </figure>
+        {{/if}}
+
+        <section class="art-body">
+            {{content}}
+        </section>
+
+        <footer class="art-foot">
+            {{#if tags}}
+                <div class="art-tags">
+                    {{#foreach tags visibility="public"}}
+                        <a class="art-tag tag-{{slug}}" href="{{url}}"><span class="swatch" aria-hidden="true"></span>{{name}}</a>
+                    {{/foreach}}
+                </div>
+            {{/if}}
+
+            {{> "subscribe-card" cardClass="subscribe-block-wide"}}
+        </footer>
+
+    </article>
+
+    <nav class="post-siblings" aria-label="More letters">
+        {{#prev_post}}
+            <a class="sib sib-prev" href="{{url}}">
+                <span class="sib-eyebrow">Older letter</span>
+                <span class="sib-title">{{title}}</span>
+            </a>
+        {{/prev_post}}
+        {{#next_post}}
+            <a class="sib sib-next" href="{{url}}">
+                <span class="sib-eyebrow">Newer letter</span>
+                <span class="sib-title">{{title}}</span>
+            </a>
+        {{/next_post}}
+    </nav>
+    {{/post}}
+</main>

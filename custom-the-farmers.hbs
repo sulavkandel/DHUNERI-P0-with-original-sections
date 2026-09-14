@@ -1,0 +1,64 @@
+{{!< default}}
+{{!-- The Farmers — named profiles from posts tagged #farmer; designed fallback trio until they exist.
+     Alternating rows (.reverse). Mobile ≤800px: rows stack image-first, reverse resets. --}}
+
+{{> "site-nav"}}
+
+<main id="main" class="farmers-page">
+    {{#post}}
+
+    <section class="farmers-hero">
+        <p class="eyebrow">The Farmers · Named, counted, paid</p>
+        <h1>{{title}}</h1>
+        <p class="farmers-lede">{{#if custom_excerpt}}{{custom_excerpt}}{{else}}Every tin of Dhuneri carries the name of the farmer who grew it. These are the first three. We add names slowly, on purpose — a name is a responsibility.{{/if}}</p>
+        <p class="count">03 farmers · Taplejung</p>
+    </section>
+
+    {{#get "posts" filter="tag:hash-farmer" limit="100" order="published_at asc"}}
+        {{#foreach posts}}
+            <article class="farmer-full{{#if @even}} reverse{{/if}} fade-up">
+                <div class="img">
+                    {{#if feature_image}}
+                        <img src="{{img_url feature_image size="l"}}" alt="Portrait of {{title}}" loading="lazy">
+                    {{/if}}
+                </div>
+                <div class="info">
+                    <p class="idx">{{@number}}.</p>
+                    <h2>{{title}}</h2>
+                    {{#if custom_excerpt}}<p class="loc">{{custom_excerpt}}</p>{{/if}}
+                    <blockquote class="quote">{{excerpt words="30"}}</blockquote>
+                    <a class="link" href="{{url}}">The full story →</a>
+                </div>
+            </article>
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "{{title}}",
+                {{#if feature_image}}"image": "{{img_url feature_image size="l" absolute="true"}}",{{/if}}
+                "url": "{{url absolute="true"}}",
+                "jobTitle": "Cardamom farmer"
+            }
+            </script>
+        {{/foreach}}
+    {{else}}
+        {{!-- Designed fallback — replaced automatically once #farmer posts exist (deployment guide §6) --}}
+        <article class="farmer-full fade-up">
+            <p>Until a farmer has agreed to be named, this card stays quiet. That is the covenant.</p>
+        </article>
+    {{/get}}
+
+    <section class="farmers-note">
+        {{#if content}}
+            <div class="art-body farmers-note-body">{{content}}</div>
+        {{else}}
+            <p class="farmers-note-default">Every farmer here is paid a named-origin price above the Birgunj commodity rate, and every tin's batch code traces back to exactly one of these hearths. When we add a name, it stays added.</p>
+        {{/if}}
+    </section>
+
+    <section class="page-close">
+        {{> "subscribe-card"}}
+    </section>
+
+    {{/post}}
+</main>
