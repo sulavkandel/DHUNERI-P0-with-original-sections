@@ -1,102 +1,287 @@
 {{!< default}}
-{{!-- The Land — origin story. Kanchenjunga Deep hero, SVG district map, ropani lattice diagram.
-     Mobile: hero 70svh, map block stacks map-first, gallery 1-col. --}}
+{{!--
+    The Land — editorial field journal.
+    Uses the page feature image and the three existing land gallery settings.
+    Generated theme images are fallbacks only and are identified as visual studies.
+--}}
 
-<main id="main" class="land-page">
+<main id="main" class="land-page land-v2">
     {{#post}}
 
-    <section class="land-hero">
+    <header class="land-v2-hero grain">
         {{#if feature_image}}
-            <div class="land-hero-bg" style="background-image: url({{img_url feature_image size="xl"}});" aria-hidden="true"></div>
+            <div class="land-v2-hero-image drift" style="background-image:url({{img_url feature_image size="xl"}})" aria-hidden="true"></div>
+        {{else}}
+            <div class="land-v2-hero-image land-v2-hero-fallback drift" aria-hidden="true"></div>
+            <span class="land-v2-concept">Visual study · generated concept</span>
         {{/if}}
         {{> "site-nav" navClass="on-dark"}}
-        <div class="land-hero-inner">
-            <p class="eyebrow on-dark-eyebrow">The Land · Taplejung</p>
-            <h1>{{title}}</h1>
-            <p class="coords">27°21′N &nbsp;·&nbsp; 87°40′E &nbsp;·&nbsp; 800–2,000 m</p>
+        <div class="land-v2-hero-inner">
+            <div class="land-v2-hero-title">
+                <p class="eyebrow on-dark-eyebrow">Field journal · Taplejung</p>
+                <h1>{{title}}</h1>
+            </div>
+            <div class="land-v2-hero-dek">
+                {{#if custom_excerpt}}
+                    <p>{{custom_excerpt}}</p>
+                {{else}}
+                    <p>Black cardamom begins beneath a living canopy, where steep ground, shade and water shape every decision.</p>
+                {{/if}}
+                <div class="land-v2-coords">
+                    <span>27°21′ N · 87°40′ E</span>
+                    <span>Eastern Nepal</span>
+                </div>
+            </div>
+        </div>
+        <a class="land-v2-scroll" href="#land-origin">Scroll to enter <span aria-hidden="true">↓</span></a>
+    </header>
+
+    <section class="land-v2-intro" id="land-origin">
+        <div class="land-v2-wrap land-v2-spread fade-up">
+            <div>
+                <p class="eyebrow">Entry 01 · Origin</p>
+                <h2>A crop of the <em>understory.</em></h2>
+            </div>
+            <div>
+                <p class="land-v2-lead">The farm is not a flat field. It is a layered landscape—tree canopy above, cardamom below, water moving through it.</p>
+                <div class="land-v2-columns">
+                    <p>Large cardamom is cultivated in humid, shaded conditions across the eastern Himalayan region. In Taplejung, terrain changes how fields are reached, how harvests move, and how quickly fresh capsules can reach a dryer.</p>
+                    <p>This page is a growing field record. Confirmed geographic context sits beside clearly marked observations and research questions. Farmer testimony and measured results will be added only when collected and documented.</p>
+                </div>
+                <p class="land-v2-margin-note">Describe the land without turning it into a postcard—or presenting an assumption as evidence.</p>
+            </div>
+        </div>
+        {{#if content}}
+            <div class="land-v2-editorial art-body fade-up">
+                {{content}}
+            </div>
+        {{/if}}
+    </section>
+
+    <section class="land-v2-atlas grain">
+        <div class="land-v2-wrap">
+            <div class="land-v2-section-head fade-up">
+                <div>
+                    <p class="eyebrow">Plate 01 · Orientation</p>
+                    <h2>Reading the <em>east.</em></h2>
+                </div>
+                <p>This schematic is an editorial orientation, not a survey map. Select a marker to see what each location contributes to the field-research plan.</p>
+            </div>
+
+            <div class="land-v2-map-card fade-up">
+                <figure class="land-v2-map-pane">
+                    <svg viewBox="0 0 760 620" role="img" aria-labelledby="land-map-name land-map-desc" xmlns="http://www.w3.org/2000/svg">
+                        <title id="land-map-name">Conceptual orientation map of eastern Nepal</title>
+                        <desc id="land-map-desc">A not-to-scale terrain diagram marking Taplejung, a hill route and a market route.</desc>
+                        <defs>
+                            <pattern id="land-contours" width="90" height="60" patternUnits="userSpaceOnUse">
+                                <path d="M-20 45 Q15 5 55 38 T120 34" fill="none" stroke="#796f5d" stroke-width="1" opacity=".35"/>
+                            </pattern>
+                        </defs>
+                        <rect width="760" height="620" fill="#E8DCC3"/>
+                        <rect width="760" height="620" fill="url(#land-contours)"/>
+                        <path d="M75 455L120 335l95 22 65-118 110 48 68-126 115 39 76-102 60 70-17 170 50 116-110 85-132-23-112 52-126-57-132 28z" fill="#C9B794" stroke="#1A1613" stroke-width="2"/>
+                        <path d="M555 196c-82 86-127 146-176 244-31 60-75 79-137 98" fill="none" stroke="#8B2E2A" stroke-width="3" stroke-dasharray="7 8"/>
+                        <path d="M560 160l25-48 21 45 24-72 35 81" fill="none" stroke="#2A3630" stroke-width="4"/>
+                        <circle cx="563" cy="195" r="9" fill="#B8703A"/>
+                        <circle cx="386" cy="357" r="8" fill="#3B4A3F"/>
+                        <circle cx="240" cy="515" r="8" fill="#1A1613"/>
+                        <text x="520" y="75" font-family="Manrope, sans-serif" font-size="12" letter-spacing="3">KANCHENJUNGA</text>
+                        <text x="25" y="35" font-family="Manrope, sans-serif" font-size="11" letter-spacing="3">CONCEPTUAL ORIENTATION</text>
+                        <path d="M55 74h120" stroke="#1A1613"/>
+                        <text x="55" y="95" font-family="Manrope, sans-serif" font-size="10">NOT TO SCALE</text>
+                    </svg>
+                    <button class="land-v2-map-marker marker-1 is-active" type="button" data-land-map-marker data-title="Taplejung" data-copy="The initial field focus: elevation, shade, water access and distance between harvest and drying." aria-pressed="true">01 Taplejung</button>
+                    <button class="land-v2-map-marker marker-2" type="button" data-land-map-marker data-title="Hill route" data-copy="Future fieldwork can document how capsules, fuel and equipment move through steep terrain." aria-pressed="false">02 Hill route</button>
+                    <button class="land-v2-map-marker marker-3" type="button" data-land-map-marker data-title="Market route" data-copy="Trade-route claims will appear only after the route and supporting sources are verified." aria-pressed="false">03 Market route</button>
+                </figure>
+                <aside class="land-v2-map-note" aria-live="polite">
+                    <span class="land-v2-note-index">Selected marker</span>
+                    <div>
+                        <h3 id="land-map-title">Taplejung</h3>
+                        <p id="land-map-copy">The initial field focus: elevation, shade, water access and distance between harvest and drying.</p>
+                        <p class="land-v2-map-legend">● Field focus &nbsp; — Research route</p>
+                    </div>
+                </aside>
+            </div>
         </div>
     </section>
 
-    <div class="land-body">
-
-        <section class="land-map-block">
-            <figure class="land-map fade-up" role="img" aria-label="Schematic map of eastern Nepal showing the cardamom district Taplejung, and the trade route to Birgunj">
-                <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <!-- Eastern Nepal, simplified. Palette only. -->
-                    <rect width="520" height="400" fill="#EFE5D0"/>
-                    <path d="M20 260 L60 200 L110 215 L150 160 L210 175 L260 120 L320 140 L370 90 L430 110 L480 70 L500 130 L490 210 L500 290 L440 330 L370 315 L300 345 L230 330 L160 355 L90 335 L30 320 Z"
-                          fill="#E8DBBF" stroke="#1A1613" stroke-width="1.5" stroke-linejoin="round"/>
-                    <!-- Kanchenjunga ridge -->
-                    <path d="M400 95 L425 60 L450 100 M430 100 L455 68 L478 105" fill="none" stroke="#3B4A3F" stroke-width="2" stroke-linecap="round"/>
-                    <text x="405" y="45" font-family="Manrope, sans-serif" font-size="11" letter-spacing="2" fill="#3B4A3F">KANCHENJUNGA</text>
-                    <!-- Growing districts (copper) -->
-                    <circle cx="415" cy="150" r="7" fill="#B8703A"/>
-                    <text x="430" y="154" font-family="Manrope, sans-serif" font-size="12" letter-spacing="2" fill="#1A1613">TAPLEJUNG</text>
-                    <!-- Border exit (ink) -->
-                    <circle cx="150" cy="330" r="6" fill="#1A1613"/>
-                    <text x="120" y="352" font-family="Manrope, sans-serif" font-size="12" letter-spacing="2" fill="#1A1613">BIRGUNJ</text>
-                    <!-- The route that erases a name -->
-                    <path d="M415 150 C 340 230, 260 290, 156 326" fill="none" stroke="#8B2E2A" stroke-width="1.5" stroke-dasharray="6 5"/>
-                    <text x="200" y="255" font-family="EB Garamond, serif" font-size="13" font-style="italic" fill="#8B2E2A" transform="rotate(-14 200 255)">the road that erases a name</text>
+    <section class="land-v2-profile grain">
+        <div class="land-v2-wrap land-v2-profile-grid fade-up">
+            <div>
+                <p class="eyebrow on-dark-eyebrow">Plate 02 · Field profile</p>
+                <h2>Anatomy of a <em>hillside.</em></h2>
+                <p>A future evidence layer can combine elevation, slope, canopy, water and access measurements. For now, this illustration shows the information architecture—not measured conditions at a named farm.</p>
+            </div>
+            <figure class="land-v2-slope">
+                <svg viewBox="0 0 780 590" role="img" aria-labelledby="slope-title slope-desc" xmlns="http://www.w3.org/2000/svg">
+                    <title id="slope-title">Conceptual cross-section of a cardamom hillside</title>
+                    <desc id="slope-desc">A sloping profile identifies tree canopy, cardamom understory and water.</desc>
+                    <rect width="780" height="590" fill="#D8C7A5"/>
+                    <path d="M0 515Q110 430 210 455T420 340T780 195V590H0z" fill="#6B7969"/>
+                    <path d="M0 540Q120 465 245 492T455 390T780 240" fill="none" stroke="#EEE4CF" stroke-width="5" opacity=".75"/>
+                    <path d="M50 485q25-90 50 0m-25-60v82M170 440q25-100 52 0m-27-65v84M335 397q27-110 55 0m-28-72v92M520 300q27-112 58 0m-30-76v94M680 232q28-115 58 0m-30-78v99" stroke="#2A3630" stroke-width="8" fill="none"/>
+                    <path d="M580 360q45 30 5 110t-2 104" stroke="#91A79D" stroke-width="12" fill="none"/>
+                    <g fill="#2F4739"><ellipse cx="116" cy="493" rx="38" ry="16"/><ellipse cx="280" cy="436" rx="40" ry="17"/><ellipse cx="458" cy="354" rx="42" ry="18"/></g>
+                    <path d="M32 105h125M32 105v400" stroke="#1A1613"/>
+                    <text x="22" y="98" font-family="Manrope, sans-serif" font-size="10">HIGH</text>
+                    <text x="22" y="525" font-family="Manrope, sans-serif" font-size="10">LOW</text>
                 </svg>
-                <figcaption class="legend"><span>● Cardamom districts</span><span>● Commodity exit</span><span>― ― The unnamed road</span></figcaption>
+                <span class="land-v2-pin pin-1">1</span><span class="land-v2-pin pin-2">2</span><span class="land-v2-pin pin-3">3</span>
+                <figcaption><span>1 Canopy</span><span>2 Cardamom</span><span>3 Water</span></figcaption>
             </figure>
+        </div>
+    </section>
 
-            <div class="land-explain fade-up">
-                <h2>It refuses <em>flat farms.</em></h2>
-                <p>Cardamom is a shade-loving forest crop. It will not grow in tidy grids under open sun. It wants the wet folds of the Kanchenjunga foothills — under the alder trees, beside the streams, between 800 and 2,000 metres.</p>
-                <p>That is why it grows here and almost nowhere else in Nepal at scale: Taplejung. Hills too steep for tractors, tended entirely by hand, one ropani at a time.</p>
-                <p>And that is why the last number hurts: nearly everything grown here leaves through Birgunj as an unnamed commodity — graded, sacked, and renamed at the border.</p>
+    <section class="land-v2-seasons">
+        <div class="land-v2-wrap land-v2-season-layout fade-up">
+            <div>
+                <p class="eyebrow">Entry 02 · Calendar</p>
+                <h2>The growing <em>year.</em></h2>
+                <p>A seasonal framework gives future field notes a consistent place. Timing should be checked against location-specific sources and interviews before dates are published.</p>
             </div>
-        </section>
-
-        <section class="ropani-explainer fade-up">
-            <div class="ropani-diagram" role="img" aria-label="Diagram of one ropani: a square of sixteen aana, about 74 feet per side">
-                <span class="label">One Ropani</span>
-                <div class="grid" aria-hidden="true">
-                    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+            <div>
+                <div class="land-v2-tabs" role="tablist" aria-label="Seasonal field notes">
+                    <button class="is-active" type="button" role="tab" data-land-season data-title="Growth & moisture" data-copy="The canopy is dense and water movement becomes central to observing field conditions." data-status="Observation framework · timing to verify" aria-selected="true">Monsoon</button>
+                    <button type="button" role="tab" data-land-season data-title="Understory activity" data-copy="Future entries can document flowering, pollination and farm practices with dates and named sources." data-status="Research placeholder · timing to verify" aria-selected="false">Flowering</button>
+                    <button type="button" role="tab" data-land-season data-title="Movement begins" data-copy="Harvest notes should connect maturity, picking decisions and the time taken to reach a drying location." data-status="Interview topic · no result claimed" aria-selected="false">Harvest</button>
+                    <button type="button" role="tab" data-land-season data-title="The research bridge" data-copy="Fresh capsules enter DHUNERI’s central question: how can drying preserve quality while meeting laboratory requirements?" data-status="Active research question" aria-selected="false">Drying</button>
                 </div>
-                <span class="dim w">≈ 74 ft</span>
-                <span class="dim h">≈ 74 ft</span>
+                <article class="land-v2-season-card" role="tabpanel" aria-live="polite">
+                    <div class="land-v2-season-image">
+                        {{#if @custom.land_gallery_2}}
+                            <img src="{{img_url @custom.land_gallery_2 size="l"}}" alt="Cardamom plant beneath the forest canopy" loading="lazy">
+                        {{else}}
+                            <img src="{{asset "images/generated/cardamom_shade_leaves.jpg"}}" alt="Conceptual visual study of cardamom leaves beneath shade" loading="lazy">
+                            <span class="land-v2-image-status">Generated visual study</span>
+                        {{/if}}
+                    </div>
+                    <div class="land-v2-season-copy">
+                        <span class="land-v2-note-index">Seasonal note</span>
+                        <h3 id="land-season-title">Growth &amp; moisture</h3>
+                        <p id="land-season-copy">The canopy is dense and water movement becomes central to observing field conditions.</p>
+                        <span class="land-v2-season-status" id="land-season-status">Observation framework · timing to verify</span>
+                    </div>
+                </article>
             </div>
-            <div class="text">
-                <h3>The <em>ropani</em> — how a hill measures itself.</h3>
-                <p>Nepal's hills do not count in hectares. A ropani is about 508.7 square metres — sixteen aana, roughly a square of seventy-four feet. When a farmer tells you "fifteen ropani," they are telling you the size of their world.</p>
-                <p>Every farmer on this site is counted in ropani, because that is how they count themselves.</p>
-                <div class="facts">
-                    <div class="f"><div class="n">508.7</div><div class="l">square metres</div></div>
-                    <div class="f"><div class="n">16</div><div class="l">aana</div></div>
-                    <div class="f"><div class="n">19.7</div><div class="l">ropani ≈ 1 hectare</div></div>
+        </div>
+    </section>
+
+    <section class="land-v2-measure grain">
+        <div class="land-v2-wrap land-v2-measure-grid fade-up">
+            <figure class="land-v2-ropani" aria-labelledby="ropani-title">
+                <figcaption class="land-v2-ropani-label top" id="ropani-title">One ropani</figcaption>
+                <div class="land-v2-ropani-grid" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <span class="land-v2-ropani-label bottom">≈ 508.7 square metres</span>
+                <span class="land-v2-ropani-label side">16 aana</span>
+            </figure>
+            <div>
+                <p class="eyebrow">Plate 03 · Local measure</p>
+                <h2>A hill measures itself in <em>ropani.</em></h2>
+                <p>The local unit belongs in the story because it is how land is commonly described. The familiar measure remains primary, with metric equivalence for wider readers.</p>
+                <div class="land-v2-facts">
+                    <div><strong>508.7</strong><span>Square metres</span></div>
+                    <div><strong>16</strong><span>Aana</span></div>
+                    <div><strong>≈19.7</strong><span>Ropani / hectare</span></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {{#if content}}
-        <section class="art-body land-content">
-            {{content}}
-        </section>
-        {{/if}}
-
+    <section class="land-v2-research grain">
         {{#if @custom.land_gallery_1}}
-        <section class="land-gallery fade-up">
-            <div class="cell"><img src="{{img_url @custom.land_gallery_1 size="l"}}" alt="Cardamom growing under the alder trees" loading="lazy"></div>
-            <div class="side">
-                {{#if @custom.land_gallery_2}}<div class="cell"><img src="{{img_url @custom.land_gallery_2 size="m"}}" alt="The cardamom plant up close" loading="lazy"></div>{{/if}}
-                {{#if @custom.land_gallery_3}}<div class="cell"><img src="{{img_url @custom.land_gallery_3 size="m"}}" alt="Hillside terraces in eastern Nepal" loading="lazy"></div>{{/if}}
-            </div>
-        </section>
+            <div class="land-v2-research-image" style="background-image:url({{img_url @custom.land_gallery_1 size="xl"}})" aria-hidden="true"></div>
+        {{else}}
+            <div class="land-v2-research-image land-v2-research-fallback" aria-hidden="true"></div>
         {{/if}}
+        <div class="land-v2-research-copy fade-up">
+            <p class="eyebrow on-dark-eyebrow">From land to method</p>
+            <h2>The journey does not end at <em>harvest.</em></h2>
+            <p>Terrain and local conditions frame the practical drying problem, but they do not determine the answer. DHUNERI will compare methods through documented procedures and laboratory evidence—not visual storytelling alone.</p>
+            <div class="land-v2-questions">
+                <div><b>01 · Access</b><span>How soon can fresh capsules reach a dryer?</span></div>
+                <div><b>02 · Conditions</b><span>What moisture and weather conditions surround the process?</span></div>
+                <div><b>03 · Evidence</b><span>Which measurements define an acceptable result?</span></div>
+            </div>
+            <a class="text-link on-dark-link" href="{{@site.url}}/tag/research/">Continue to research <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
 
-        <section class="photo-direction fade-up">
-            <div><h4>The light</h4><p>Warm-shadow, 3200K, low-key. Bhatti scenes are lit by fire only. Morning mist is allowed; drone-brochure panoramas are not.</p></div>
-            <div><h4>The land</h4><p>Steep, wet, worked. Terraces with tools left in them. No empty postcard hills — this land is someone's fifteen ropani.</p></div>
-            <div><h4>The people</h4><p>Portraits 3:4, quarter-turn, hands visible, natural light. Never a forced smile. The person is named or the photograph is not used.</p></div>
-        </section>
+    <section class="land-v2-essay">
+        <div class="land-v2-wrap">
+            <div class="land-v2-essay-head fade-up">
+                <div><p class="eyebrow">Image essay · Field archive</p><h2>Shade, water, <em>ground.</em></h2></div>
+                <p>Uploaded field photographs replace visual studies automatically.</p>
+            </div>
+            <div class="land-v2-mosaic fade-up">
+                <figure class="land-v2-photo large">
+                    {{#if @custom.land_gallery_1}}
+                        <img src="{{img_url @custom.land_gallery_1 size="xl"}}" alt="Cardamom growing beneath the forest canopy" loading="lazy">
+                    {{else}}
+                        <img src="{{asset "images/generated/cardamom_shade_leaves.jpg"}}" alt="Conceptual visual study of cardamom leaves beneath shade" loading="lazy">
+                        <figcaption>01 · Understory · generated visual study</figcaption>
+                    {{/if}}
+                </figure>
+                <div class="land-v2-photo-stack">
+                    <figure class="land-v2-photo">
+                        {{#if @custom.land_gallery_2}}
+                            <img src="{{img_url @custom.land_gallery_2 size="l"}}" alt="Cardamom plant detail" loading="lazy">
+                        {{else}}
+                            <img src="{{asset "images/generated/cardamom-field-ground.jpg"}}" alt="Conceptual visual study of cardamom field ground" loading="lazy">
+                            <figcaption>02 · Ground · generated visual study</figcaption>
+                        {{/if}}
+                    </figure>
+                    <figure class="land-v2-photo">
+                        {{#if @custom.land_gallery_3}}
+                            <img src="{{img_url @custom.land_gallery_3 size="l"}}" alt="Hillside landscape in eastern Nepal" loading="lazy">
+                        {{else}}
+                            <img src="{{asset "images/abstract_texture.jpg"}}" alt="Abstract earthen texture used as a visual placeholder" loading="lazy">
+                            <figcaption>03 · Material study · placeholder</figcaption>
+                        {{/if}}
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="page-close">
-            {{> "subscribe-card"}}
-        </section>
+    <section class="land-v2-notes grain">
+        <div class="land-v2-wrap">
+            <p class="eyebrow">Living archive</p>
+            <h2>Field notes will make this page <em>deeper.</em></h2>
+            <div class="land-v2-note-cards fade-up">
+                {{#get "posts" filter="tag:research" limit="3" include="tags"}}
+                    {{#foreach posts}}
+                        <article class="land-v2-note-card">
+                            <span>{{#primary_tag}}{{name}}{{else}}Research note{{/primary_tag}} · {{date format="D MMM YYYY"}}</span>
+                            <h3><a href="{{url}}">{{title}}</a></h3>
+                            <p>{{excerpt words="24"}}</p>
+                            <a class="land-v2-note-link" href="{{url}}">Read field note <span aria-hidden="true">→</span></a>
+                        </article>
+                    {{else}}
+                        <article class="land-v2-note-card">
+                            <span>Research note · Planned</span><h3>Mapping harvest-to-dryer time</h3><p>A repeatable log for distance, terrain, transport and elapsed time between picking and drying.</p><a class="land-v2-note-link" href="{{@site.url}}/tag/research/">Research archive →</a>
+                        </article>
+                        <article class="land-v2-note-card">
+                            <span>Interview series · Planned</span><h3>How farmers describe the land</h3><p>Named, consented interviews can add lived context without reducing people to decoration.</p><a class="land-v2-note-link" href="{{@site.url}}/tag/research/">Interview principles →</a>
+                        </article>
+                        <article class="land-v2-note-card is-placeholder">
+                            <span>Field entry · Awaiting evidence</span><h3>Reserved for the first documented visit</h3><p>This card remains a placeholder until a dated, sourced field observation is available.</p><a class="land-v2-note-link" href="{{@site.url}}/tag/research/">Evidence policy →</a>
+                        </article>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <section class="land-v2-next">
+        <div class="land-v2-next-inner fade-up">
+            <div><p class="eyebrow on-dark-eyebrow">Next chapter</p><h2>The <em>Craft</em></h2></div>
+            <div><p>Follow the harvest from fresh capsule to drying method—and see how tradition, adaptation and laboratory requirements meet.</p><a href="{{@site.url}}/the-craft/">Enter The Craft <span aria-hidden="true">→</span></a></div>
+        </div>
+    </section>
+
     {{/post}}
 </main>
