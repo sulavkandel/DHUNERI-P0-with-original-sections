@@ -22,6 +22,7 @@
     var seasonTitle = document.getElementById('land-season-title');
     var seasonCopy = document.getElementById('land-season-copy');
     var seasonStatus = document.getElementById('land-season-status');
+    var seasonImage = document.getElementById('land-season-image');
 
     function selectSeason(tab) {
         seasonTabs.forEach(function (other) {
@@ -33,6 +34,9 @@
         if (seasonTitle) seasonTitle.textContent = tab.getAttribute('data-title') || '';
         if (seasonCopy) seasonCopy.textContent = tab.getAttribute('data-copy') || '';
         if (seasonStatus) seasonStatus.textContent = tab.getAttribute('data-status') || '';
+        if (seasonImage && tab.hasAttribute('data-image')) {
+            seasonImage.src = tab.getAttribute('data-image');
+        }
     }
 
     seasonTabs.forEach(function (tab, index) {

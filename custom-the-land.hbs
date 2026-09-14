@@ -6,7 +6,7 @@
 --}}
 
 <main id="main" class="land-page land-v2">
-    {{#post}}
+    
 
     <header class="land-v2-hero grain">
         {{#if feature_image}}
@@ -143,17 +143,17 @@
             </div>
             <div>
                 <div class="land-v2-tabs" role="tablist" aria-label="Seasonal field notes">
-                    <button class="is-active" type="button" role="tab" data-land-season data-title="Growth & moisture" data-copy="The canopy is dense and water movement becomes central to observing field conditions." data-status="Observation framework · timing to verify" aria-selected="true">Monsoon</button>
-                    <button type="button" role="tab" data-land-season data-title="Understory activity" data-copy="Future entries can document flowering, pollination and farm practices with dates and named sources." data-status="Research placeholder · timing to verify" aria-selected="false">Flowering</button>
-                    <button type="button" role="tab" data-land-season data-title="Movement begins" data-copy="Harvest notes should connect maturity, picking decisions and the time taken to reach a drying location." data-status="Interview topic · no result claimed" aria-selected="false">Harvest</button>
-                    <button type="button" role="tab" data-land-season data-title="The research bridge" data-copy="Fresh capsules enter DHUNERI’s central question: how can drying preserve quality while meeting laboratory requirements?" data-status="Active research question" aria-selected="false">Drying</button>
+                    <button class="is-active" type="button" role="tab" data-land-season data-image="{{asset "images/generated/monsoon.jpg"}}" data-title="Growth & moisture" data-copy="The canopy is dense and water movement becomes central to observing field conditions." data-status="Observation framework · timing to verify" aria-selected="true">Monsoon</button>
+                    <button type="button" role="tab" data-land-season data-image="{{asset "images/generated/flowering.jpg"}}" data-title="Understory activity" data-copy="Future entries can document flowering, pollination and farm practices with dates and named sources." data-status="Research placeholder · timing to verify" aria-selected="false">Flowering</button>
+                    <button type="button" role="tab" data-land-season data-image="{{asset "images/generated/cardamom-field-cover.jpg"}}" data-title="Movement begins" data-copy="Harvest notes should connect maturity, picking decisions and the time taken to reach a drying location." data-status="Interview topic · no result claimed" aria-selected="false">Harvest</button>
+                    <button type="button" role="tab" data-land-season data-image="{{asset "images/generated/cardamom-field-ground.jpg"}}" data-title="The research bridge" data-copy="Fresh capsules enter DHUNERI’s central question: how can drying preserve quality while meeting laboratory requirements?" data-status="Active research question" aria-selected="false">Drying</button>
                 </div>
                 <article class="land-v2-season-card" role="tabpanel" aria-live="polite">
                     <div class="land-v2-season-image">
                         {{#if @custom.land_gallery_2}}
-                            <img src="{{img_url @custom.land_gallery_2 size="l"}}" alt="Cardamom plant beneath the forest canopy" loading="lazy">
+                            <img id="land-season-image" src="{{img_url @custom.land_gallery_2 size="l"}}" alt="Cardamom plant beneath the forest canopy" loading="lazy">
                         {{else}}
-                            <img src="{{asset "images/generated/cardamom_shade_leaves.jpg"}}" alt="Conceptual visual study of cardamom leaves beneath shade" loading="lazy">
+                            <img id="land-season-image" src="{{asset "images/generated/monsoon.jpg"}}" alt="Conceptual visual study" loading="lazy">
                             <span class="land-v2-image-status">Generated visual study</span>
                         {{/if}}
                     </div>
@@ -238,8 +238,8 @@
                         {{#if @custom.land_gallery_3}}
                             <img src="{{img_url @custom.land_gallery_3 size="l"}}" alt="Hillside landscape in eastern Nepal" loading="lazy">
                         {{else}}
-                            <img src="{{asset "images/abstract_texture.jpg"}}" alt="Abstract earthen texture used as a visual placeholder" loading="lazy">
-                            <figcaption>03 · Material study · placeholder</figcaption>
+                            <img src="{{asset "images/generated/nepal_hillside.jpg"}}" alt="Hillside landscape in eastern Nepal" loading="lazy">
+                            <figcaption>03 · Hillside · generated visual study</figcaption>
                         {{/if}}
                     </figure>
                 </div>
@@ -283,5 +283,5 @@
         </div>
     </section>
 
-    {{/post}}
+    
 </main>
