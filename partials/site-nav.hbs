@@ -1,25 +1,19 @@
-{{!-- Global navigation. Pass navClass="on-dark" on dark heroes. Mobile ≤900px: hamburger → full-screen ink overlay (see screen.css + main.js). --}}
-<a class="skip-link" href="#main">Skip to content</a>
-<nav class="dh-nav {{navClass}}" aria-label="Primary">
-    <a class="brand" href="{{@site.url}}/">
-        <span class="glyph" aria-hidden="true">{{> "logo-limbu"}}</span><span class="sr-only">Dhuneri</span>
-        <span class="wordmark">{{@site.title}}</span>
+<header class="site-header {{navClass}}" aria-label="DHUNERI site header">
+    <a class="brand" href="{{@site.url}}/" aria-label="DHUNERI home">
+        <span class="brand-script" aria-hidden="true">{{> "logo-limbu"}}</span>
+        <span class="brand-word">{{@site.title}}</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-        <span class="nav-toggle-bar" aria-hidden="true"></span>
-        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"><i></i><i></i></span>
     </button>
 
-    <div class="links" id="nav-links">
-        <span class="nav-overlay-glyph" aria-hidden="true">{{> "logo-limbu"}}</span><span class="sr-only">Dhuneri</span>
-        <ul>
-                <li><a href="{{@site.url}}/">Home</a></li>
-                <li><a href="{{@site.url}}/the-land/">The Land</a></li>
-                <li><a href="{{@site.url}}/the-farmers/">The Farmers</a></li>
-                <li><a href="{{@site.url}}/the-craft/">The Craft</a></li>
-                <li><a href="{{@site.url}}/journal/">Journal</a></li>
-            <li><a class="cta" href="{{@site.url}}/subscribe/">Subscribe</a></li>
-        </ul>
-    </div>
-</nav>
+    <nav id="nav-links" class="site-nav" aria-label="Primary navigation">
+        <a href="{{@site.url}}/the-land/">The Land</a>
+        <a href="{{@site.url}}/the-farmers/">The Farmers</a>
+        <a href="{{@site.url}}/the-craft/">The Craft</a>
+        <a href="{{@site.url}}/journal/">Journal</a>
+        <a class="nav-pill" href="{{@site.url}}/subscribe/">Subscribe</a>
+    </nav>
+</header>

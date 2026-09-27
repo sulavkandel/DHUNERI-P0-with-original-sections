@@ -409,3 +409,12 @@ h1 em, h2 em, .dispatch-copy em, .visual-slip em { color: var(--copper-lift); fo
   .site-nav > a { min-height: 52px; padding: .75rem 1.2rem; font-size: .9rem; }
   .site-nav .nav-pill { min-height: 52px; padding: .8rem 1.25rem; }
 }
+
+/* Override site-header for light pages */
+.site-header.on-light { color: var(--ink); }
+.site-header.on-light .nav-toggle { color: var(--ink); border-color: rgba(26,22,19,.45); }
+.site-header.on-light .site-nav a:not(.nav-pill):hover, 
+.site-header.on-light .site-nav a:not(.nav-pill):focus-visible { background: rgba(26,22,19,.08); }
+.site-header.on-light .site-nav .nav-pill { border-color: rgba(26,22,19,.45); }
+.site-header.on-light .site-nav .nav-pill:hover { border-color: var(--copper); }
+body.nav-open .site-header.on-light .nav-toggle { color: var(--cream); border-color: rgba(244,237,221,.45); }
