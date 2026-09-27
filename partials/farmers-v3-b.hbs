@@ -1,0 +1,83 @@
+<section class="farmers-v3-voices farmers-v3-section">
+    <div class="farmers-v3-wrap">
+        <div class="farmers-v3-split farmers-v3-reveal">
+            <div>
+                <p class="farmers-v3-eyebrow">05 · Farmer profiles</p>
+                <h2>Leave room for a <em>real voice.</em></h2>
+                <p>Farmer interviews appear here only after the participant has agreed to publication.</p>
+            </div>
+            <div class="farmers-v3-profile-list">
+                {{#get "posts" filter="tag:hash-farmer" limit="100" order="published_at asc"}}
+                    {{#foreach posts}}
+                        <article class="farmers-v3-profile">
+                            {{#if feature_image}}
+                                <a class="farmers-v3-profile-image" href="{{url}}">
+                                    <img src="{{img_url feature_image size="l"}}"
+                                         srcset="{{img_url feature_image size="m"}} 750w, {{img_url feature_image size="l"}} 1200w"
+                                         sizes="(max-width: 800px) 100vw, 42vw"
+                                         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}Image accompanying {{title}}{{/if}}"
+                                         loading="lazy">
+                                </a>
+                            {{/if}}
+                            <div class="farmers-v3-profile-copy">
+                                <span class="farmers-v3-status">Consented profile · {{date format="YYYY"}}</span>
+                                <h3><a href="{{url}}">{{title}}</a></h3>
+                                {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>{{excerpt words="28"}}</p>{{/if}}
+                                <a class="farmers-v3-profile-link" href="{{url}}">Read the full story →</a>
+                            </div>
+                        </article>
+                    {{else}}
+                        <article class="farmers-v3-empty">
+                            <span class="farmers-v3-quote" aria-hidden="true">“ ”</span>
+                            <div>
+                                <span class="farmers-v3-status">No consented profile published yet</span>
+                                <h3>This space stays unnamed.</h3>
+                                <p>Future entries should record preferred attribution, interview date, appropriate location precision, translation notes and photography permission. A participant should be able to review how their words are represented.</p>
+                            </div>
+                        </article>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#if content}}
+<section class="farmers-v3-editorial farmers-v3-section">
+    <div class="farmers-v3-wrap">
+        <div class="art-body farmers-v3-editorial-body">{{content}}</div>
+    </div>
+</section>
+{{/if}}
+
+<section class="farmers-v3-sources farmers-v3-section">
+    <div class="farmers-v3-wrap farmers-v3-source-grid farmers-v3-reveal">
+        <div>
+            <p class="farmers-v3-eyebrow">06 · Source register</p>
+            <h2>Every claim has an <em>address.</em></h2>
+            <p>Statistics are dated and each claim links to its publication. Sources on this page were reviewed on 15 September 2026.</p>
+        </div>
+        <ol>
+            <li><a href="https://openknowledge.fao.org/handle/20.500.14283/cd6635en">FAO — Nepal: Large Cardamom</a><small>Market Intelligence Series, 2025 · export concentration and post-harvest context</small></li>
+            <li><a href="https://www.fao.org/one-country-one-priority-product/news-and-events/news/strengthening-the-value-chain-of-large-cardamom-in-nepal/en">FAO — Strengthening the value chain</a><small>21 October 2024 · OCOP, disease-free saplings, GAP and market priorities</small></li>
+            <li><a href="https://www.icimod.org/adaptation-solutions/reviving-and-sustaining-large-cardamom-production">ICIMOD — Reviving and sustaining production</a><small>Regional livelihood, soil, disease and climate-resilience context</small></li>
+            <li><a href="https://www.icimod.org/enhancing-the-large-cardamom-production">ICIMOD — Enhancing large cardamom production</a><small>Historical district and household context; historical figures must remain dated</small></li>
+            <li><a href="https://journals.aesacademy.org/index.php/aaes/article/download/10-01-022/pdf/2794">AAES — Status of large cardamom in Nepal</a><small>Review of production, marketing, constraints and disease literature</small></li>
+        </ol>
+    </div>
+</section>
+
+<section class="farmers-v3-next farmers-v3-section">
+    <div>
+        <p class="farmers-v3-eyebrow">07 · Continuing the record</p>
+        <h2>The page changes when <em>evidence does.</em></h2>
+    </div>
+    <div>
+        <p>New sources and consented interviews will be added as the work develops.</p>
+        <a href="{{@site.url}}/tag/research/">Read the research →</a>
+    </div>
+</section>
+
+<section class="farmers-v3-close">
+    {{> "subscribe-card"}}
+</section>
