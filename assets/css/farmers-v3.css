@@ -1,0 +1,103 @@
+.farmers-v3 {
+    --farmers-ink: #171714;
+    --farmers-paper: #f3eddf;
+    --farmers-green: #24372d;
+    --farmers-sage: #cad0bb;
+    --farmers-orange: #bb6738;
+    --farmers-line: rgba(23, 23, 20, .18);
+    background: var(--farmers-paper);
+    color: var(--farmers-ink);
+    font-family: var(--font-body, "EB Garamond", Georgia, serif);
+    font-size: 18px;
+    line-height: 1.45;
+}
+.farmers-v3 *, .farmers-v3 *::before, .farmers-v3 *::after {box-sizing: border-box;}
+.farmers-v3 a {color: inherit;}
+.farmers-v3-wrap {max-width: 1380px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 76px);}
+.farmers-v3-section {padding: 105px 0;}
+.farmers-v3-ui, .farmers-v3-eyebrow, .farmers-v3-status,
+.farmers-v3-tabs button, .farmers-v3-facts a {
+    font-family: var(--font-sans, Manrope, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+.farmers-v3-eyebrow {display: flex; align-items: center; gap: 12px; color: var(--farmers-orange); margin: 0 0 16px;}
+.farmers-v3-eyebrow::before {content: ""; width: 24px; height: 1px; background: currentColor; flex: none;}
+.farmers-v3 h1, .farmers-v3 h2, .farmers-v3 h3, .farmers-v3 p {margin-top: 0;}
+.farmers-v3 h1, .farmers-v3 h2, .farmers-v3 h3, .farmers-v3-standard strong, .farmers-v3-quote {
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-weight: 400;
+}
+.farmers-v3 h2 {font-size: clamp(58px, 7vw, 108px); line-height: .86; margin: 12px 0 25px;}
+.farmers-v3 h2 em {color: var(--farmers-orange); font-weight: 400;}
+.farmers-v3-hero {min-height: 760px; display: grid; grid-template-columns: 1.35fr .65fr; border-bottom: 1px solid var(--farmers-line);}
+.farmers-v3-hero-main {padding: 95px clamp(20px, 5vw, 76px) 65px; display: flex; flex-direction: column;}
+.farmers-v3-hero h1 {font-size: clamp(88px, 13vw, 182px); line-height: .88; letter-spacing: -.03em; margin: 35px 0;}
+.farmers-v3-hero h1 em {display: block; padding-left: 10vw; font-weight: 400;}
+.farmers-v3-hero-dek {font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-style: italic; font-size: clamp(27px, 3vw, 46px); line-height: 1.08; max-width: 27ch; margin-top: auto;}
+.farmers-v3-standard {background: var(--farmers-green); color: var(--farmers-paper); padding: 80px 45px; display: flex; flex-direction: column; justify-content: space-between;}
+.farmers-v3-standard strong {display: block; font-size: 46px; line-height: 1; margin-top: 12px;}
+.farmers-v3-standard p {color: rgba(243, 237, 223, .72); border-top: 1px solid rgba(255,255,255,.25); padding-top: 20px; margin: 0;}
+.farmers-v3-split {display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw;}
+.farmers-v3-copy .farmers-v3-lead {font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-size: clamp(28px, 3.2vw, 48px); line-height: 1.08;}
+.farmers-v3-facts {display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 55px; border-top: 1px solid var(--farmers-ink);}
+.farmers-v3-facts article {padding: 25px 25px 0 0; border-right: 1px solid var(--farmers-line);}
+.farmers-v3-facts b {display: block; font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-weight: 400; font-size: clamp(54px, 6vw, 88px); line-height: 1; color: var(--farmers-green);}
+.farmers-v3-facts h3 {font-size: 27px; margin: 12px 0 5px;}
+.farmers-v3-facts p {font-size: 14px;}
+.farmers-v3-facts a {display: inline-block; color: #70695e; text-underline-offset: 4px;}
+.farmers-v3-work {background: #e5d8bd;}
+.farmers-v3-section-head {display: flex; justify-content: space-between; align-items: end; gap: 50px;}
+.farmers-v3-section-head > p {max-width: 43ch;}
+.farmers-v3-ledger {margin-top: 45px; border-top: 1px solid var(--farmers-ink);}
+.farmers-v3-ledger article {display: grid; grid-template-columns: 70px .7fr 1.3fr; gap: 30px; padding: 28px 0; border-bottom: 1px solid var(--farmers-line);}
+.farmers-v3-ledger span {font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-style: italic; font-size: 34px; color: var(--farmers-orange);}
+.farmers-v3-ledger h3 {font-size: 34px; line-height: 1; margin: 0;}
+.farmers-v3-ledger p {margin: 0;}
+.farmers-v3-pressure {background: var(--farmers-green); color: var(--farmers-paper);}
+.farmers-v3-pressure-grid {display: grid; grid-template-columns: .75fr 1.25fr; gap: 8vw;}
+.farmers-v3-pressure-grid > div:first-child > p:last-child {color: rgba(243, 237, 223, .72);}
+.farmers-v3-pressure-cards {display: grid; grid-template-columns: 1fr 1fr; gap: 12px;}
+.farmers-v3-pressure-cards article {border: 1px solid rgba(255,255,255,.18); padding: 25px; min-height: 210px;}
+.farmers-v3-pressure-cards b {color: #d78a58;}
+.farmers-v3-pressure-cards h3 {font-size: 29px; margin: 16px 0 7px;}
+.farmers-v3-pressure-cards p {font-size: 14px; color: rgba(243, 237, 223, .72);}
+.farmers-v3-tabs {display: flex; gap: 8px; flex-wrap: wrap; margin: 45px 0 20px;}
+.farmers-v3-tabs button {background: transparent; border: 1px solid var(--farmers-line); color: inherit; padding: 11px 14px; cursor: pointer;}
+.farmers-v3-tabs button:hover, .farmers-v3-tabs button:focus-visible {border-color: var(--farmers-ink); outline: 2px solid transparent;}
+.farmers-v3-tabs button.is-active {background: var(--farmers-ink); color: var(--farmers-paper);}
+.farmers-v3-panel {display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--farmers-ink); min-height: 190px;}
+.farmers-v3-panel article {padding: 26px 22px 10px 0; border-right: 1px solid var(--farmers-line);}
+.farmers-v3-panel b {font-family: var(--font-sans, Manrope, Arial, sans-serif); font-size: 10px; letter-spacing: .13em; color: var(--farmers-orange);}
+.farmers-v3-panel h3 {font-size: 29px; margin: 15px 0 7px;}
+.farmers-v3-panel p {font-size: 14px;}
+.farmers-v3-voices {background: var(--farmers-sage);}
+.farmers-v3-profile-list {display: grid; gap: 24px;}
+.farmers-v3-profile {display: grid; grid-template-columns: minmax(220px, .8fr) 1.2fr; border: 1px solid var(--farmers-ink); background: var(--farmers-paper);}
+.farmers-v3-profile-image {display: block; min-height: 320px; overflow: hidden; background: #bfc4b6;}
+.farmers-v3-profile-image img {width: 100%; height: 100%; object-fit: cover; display: block;}
+.farmers-v3-profile-copy {padding: 34px; display: flex; flex-direction: column; justify-content: center;}
+.farmers-v3-profile-copy h3, .farmers-v3-empty h3 {font-size: 40px; line-height: 1; margin: 15px 0;}
+.farmers-v3-profile-copy h3 a {text-decoration: none;}
+.farmers-v3-profile-link {margin-top: 15px; text-underline-offset: 5px;}
+.farmers-v3-status {color: #71695e;}
+.farmers-v3-empty {border: 1px solid var(--farmers-ink); padding: 40px; min-height: 390px; display: flex; flex-direction: column; justify-content: space-between; background: var(--farmers-paper);}
+.farmers-v3-quote {font-size: 90px; line-height: 1; font-style: italic; color: var(--farmers-orange);}
+.farmers-v3-editorial {background: var(--farmers-paper);}
+.farmers-v3-editorial-body {max-width: 760px; margin: 0 auto;}
+.farmers-v3-sources {background: var(--farmers-ink); color: var(--farmers-paper);}
+.farmers-v3-source-grid {display: grid; grid-template-columns: .65fr 1.35fr; gap: 8vw;}
+.farmers-v3-source-grid ol {margin: 0; padding: 0; list-style: none; counter-reset: source;}
+.farmers-v3-source-grid li {counter-increment: source; position: relative; padding: 18px 0 18px 45px; border-bottom: 1px solid rgba(255,255,255,.16);}
+.farmers-v3-source-grid li::before {content: counter(source, decimal-leading-zero); position: absolute; left: 0; top: 21px; font-family: var(--font-sans, Manrope, Arial, sans-serif); font-size: 10px; color: var(--farmers-orange);}
+.farmers-v3-source-grid a {text-underline-offset: 4px;}
+.farmers-v3-source-grid small {display: block; color: rgba(255,255,255,.58); margin-top: 5px;}
+.farmers-v3-next {padding: 90px clamp(20px, 5vw, 76px); display: flex; justify-content: space-between; align-items: end; gap: 60px;}
+.farmers-v3-next h2 {font-size: clamp(58px, 8vw, 120px); max-width: 9ch;}
+.farmers-v3-next > div:last-child {max-width: 34ch;}
+.farmers-v3-next a {display: inline-block; margin-top: 10px; padding: 12px 15px; border: 1px solid var(--farmers-line); text-decoration: none;}
+.farmers-v3-close {padding: 0 clamp(20px, 5vw, 76px) 90px;}
+.farmers-v3-reveal {opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease;}
+.farmers-v3-reveal.is-visible {opacity: 1; transform: none;}
+.no-js .farmers-v3-reveal {opacity: 1; transform: none;}
