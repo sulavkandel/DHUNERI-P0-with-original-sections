@@ -33,7 +33,7 @@
 .farmers-v3 h2 em {color: var(--farmers-orange); font-weight: 400;}
 .farmers-v3-hero {min-height: 760px; display: grid; grid-template-columns: 1.35fr .65fr; border-bottom: 1px solid var(--farmers-line);}
 .farmers-v3-hero-main {padding: 95px clamp(20px, 5vw, 76px) 65px; display: flex; flex-direction: column;}
-.farmers-v3-hero h1 {font-size: clamp(88px, 13vw, 182px); line-height: .7; letter-spacing: -.03em; margin: 35px 0;}
+.farmers-v3-hero h1 {font-size: clamp(88px, 13vw, 182px); line-height: .88; letter-spacing: -.03em; margin: 35px 0;}
 .farmers-v3-hero h1 em {display: block; padding-left: 10vw; font-weight: 400;}
 .farmers-v3-hero-dek {font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-style: italic; font-size: clamp(27px, 3vw, 46px); line-height: 1.08; max-width: 27ch; margin-top: auto;}
 .farmers-v3-standard {background: var(--farmers-green); color: var(--farmers-paper); padding: 80px 45px; display: flex; flex-direction: column; justify-content: space-between;}
